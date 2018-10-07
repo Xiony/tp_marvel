@@ -1,10 +1,39 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr-FR">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Title</title>
 </head>
 <body>
-$END$
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.3/semantic.css">
+<div class="ui inverted fixed menu">
+    <di class="header item">Tutoriel</div>
+</div>
+<div class="ui main container" id="app">
+    <h2>Test MODEL</h2>
+    <input type="text" v-model="message">
+    <h2>Test VARIABLE</h2>
+    <a :href="link" :title="message">{{message}}</a>
+    <h2>Test FOR</h2>
+    <ul>
+        <li v-for="person in persons">{{person}}</li>
+    </ul>
+    <h2>Test IF ELSE</h2>
+    <div class="ui success message" v-if="success">
+        <i class="close icon" @click="close"></i>
+        <p>Bravo sa fonctionne !!</p>
+    </div>
+    <div class="ui error message" v-else>
+        <p>Sa n'a pas fonctionné :(</p>
+    </div>
+    <h2>Test CHECKBOX</h2>
+    <input type="checkbox" v-model="success">
+    <h2>Test CLASS</h2>
+    <div class="ui success message" :class="{success:success,error:!success}" v-if="success">
+        <p>Bravo sa fonctionne !!</p>
+    </div>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.17/vue.js"></script>
+<script src="js/app.js"></script>
 </body>
 </html>
